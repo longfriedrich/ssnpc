@@ -1,0 +1,41 @@
+:{$PORT}
+@websockets-vl {
+        header Connection *Upgrade*
+        header Upgrade websocket
+        path /{$UUID}-vl*
+}
+handle @websockets-vl {
+        reverse_proxy * localhost:61079
+}
+@websockets-vm {
+        header Connection *Upgrade*
+        header Upgrade websocket
+        path /{$UUID}-vm*
+}
+handle @websockets-vm {
+        reverse_proxy * localhost:61080
+}
+@websockets-sh {
+        header Connection *Upgrade*
+        header Upgrade websocket
+        path /{$UUID}-sh*
+}
+handle @websockets-sh {
+        reverse_proxy * localhost:61081
+}
+@websockets-tr {
+        header Connection *Upgrade*
+        header Upgrade websocket
+        path /{$UUID}-tr*
+}
+handle @websockets-tr {
+        reverse_proxy * localhost:61082
+}
+@websockets-so {
+        header Connection *Upgrade*
+        header Upgrade websocket
+        path /{$UUID}-so*
+}
+handle @websockets-so {
+        reverse_proxy * localhost:52123
+}

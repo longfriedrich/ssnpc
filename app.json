@@ -1,0 +1,23 @@
+{
+    "name": "vmvltrshso",
+    "description": "vmvltrshso",
+    "keywords": ["vmvltrshso"],
+    "env": {
+         "PROTOCOL": {
+            "description": "Xray五合一协议共存：vless-ws、vmess-ws、trojan-ws、shadowsocks-ws、socks5-ws",
+            "value": "path路径:（斜杠/）+（自定义UUID）+（减号-）+（对应协议开头两小写字母：vl或vm或tr或sh或so）",
+             "required": true
+        },
+        "SSencryption": {
+            "description": "SS加密方式，可自定义，建议保持默认的chacha20-ietf-poly1305",
+            "value": "chacha20-ietf-poly1305",
+             "required": true
+        },
+        "UUID": {
+            "description": "请输入自定义UUID（vless-ws与vmess-ws为用户ID，trojan-ws与shadowsocks-ws为密码，socks5-ws用户名密码为空）",
+            "value": "",
+            "required": true
+        }  
+    },
+    "stack": "container"
+}
